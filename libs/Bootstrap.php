@@ -8,7 +8,9 @@ class Bootstrap
      */
     function __construct()
     {
-        $url = trim($_GET['url'] ?? '/', '/');
+//        $url = trim($_GET['url'] ?? '/', '/');
+        echo phpversion();
+        die();
         $explodedUrl = explode('/', $url);
         $url = '/' . $url;
 
@@ -48,6 +50,7 @@ class Bootstrap
     private function loadPage(array $params, array $ids = [])
     {
         require 'libs/Controller.php';
+        require 'libs/Model.php';
         require 'controllers/' . $params['controller'] . '.php';
         $controller = new $params['controller'];
         $method = $params['method'];

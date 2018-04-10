@@ -10,6 +10,6 @@ class Model
 {
     function __construct()
     {
-        // do shit!
+        echo 's';
     }
 }
